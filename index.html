@@ -39,10 +39,39 @@ body.is-loading{overflow:hidden}
 .loader.is-hidden{opacity:0;visibility:hidden;pointer-events:none}
 @keyframes loadline{0%{transform:translateX(-120%)}100%{transform:translateX(350%)}}
 @media(max-width:600px){.hero{min-height:570px;padding:78px 22px}.hero:before{inset:12px}.hero h1{font-size:clamp(62px,14vw,88px)}.event{padding:23px 8px}}
+
+.entry-screen{position:fixed;inset:0;z-index:900;background:#27382f;color:#f7f5ef;display:flex;align-items:center;justify-content:center;padding:20px;opacity:1;visibility:visible;transition:opacity .75s ease,visibility .75s ease}
+.entry-screen.is-opened{opacity:0;visibility:hidden;pointer-events:none}
+.entry-frame{width:min(100%,1000px);min-height:min(760px,calc(100svh - 40px));border:1px solid #b9a77770;position:relative;display:grid;grid-template-columns: .9fr 1.1fr;align-items:center;overflow:hidden}
+.entry-top,.entry-bottom{position:absolute;left:32px;right:32px;display:flex;justify-content:space-between;font-size:8px;letter-spacing:2px;color:#c5c8bb}
+.entry-top{top:27px}.entry-bottom{bottom:25px;color:#b4b8a9}
+.entry-art{display:flex;align-items:center;justify-content:center;height:100%;padding:45px 15px 30px;background:radial-gradient(ellipse at center,#435446 0%,#27382f 70%)}
+.entry-art svg{width:min(100%,300px);max-height:440px;opacity:.9}
+.entry-copy{text-align:center;padding:65px 25px 45px;position:relative;z-index:1}
+.entry-kicker{font-size:8px;letter-spacing:2px;color:#c6b58a;margin:0 0 28px}
+.entry-copy h1{font:400 clamp(55px,7vw,82px)/.94 'Playfair Display',serif;letter-spacing:-2px;margin:0}
+.entry-copy h1 i{font-size:.55em;font-weight:400;color:#c6b58a}
+.entry-rule{display:flex;align-items:center;justify-content:center;gap:12px;margin:28px 0 22px;color:#c6b58a;font-size:11px}
+.entry-rule span{width:45px;height:1px;background:#b9a77780}
+.entry-invite{font:italic 16px/1.6 'Playfair Display',serif;color:#d7d8cd}
+.entry-date{font-size:8px;letter-spacing:1.5px;color:#c6b58a;margin:30px 0}
+.entry-date span{display:block;margin-top:8px;letter-spacing:3px}
+.entry-button{border:1px solid #b9a777;background:transparent;color:#f7f5ef;padding:16px 22px;font:500 8px 'DM Sans',sans-serif;letter-spacing:2px;cursor:pointer;transition:background .25s,color .25s}
+.entry-button span{margin-left:25px;color:#c6b58a;font-size:14px}
+.entry-button:hover{background:#f7f5ef;color:#27382f}
+@media(max-width:650px){.entry-screen{padding:10px}.entry-frame{min-height:calc(100svh - 20px);grid-template-columns:1fr;grid-template-rows:minmax(150px,28svh) 1fr}.entry-top,.entry-bottom{left:17px;right:17px;font-size:6px;letter-spacing:1.2px}.entry-top{top:18px}.entry-bottom{bottom:17px}.entry-art{padding:35px 0 0;overflow:hidden}.entry-art svg{width:150px;height:190px}.entry-copy{padding:20px 18px 45px;align-self:start}.entry-kicker{font-size:7px;margin-bottom:18px}.entry-copy h1{font-size:clamp(54px,14vw,72px)}.entry-rule{margin:18px 0 12px}.entry-invite{font-size:14px;margin:12px 0}.entry-date{margin:19px 0}.entry-button{padding:14px 18px}}
 </style>
 </head>
 <body class="is-loading">
 <div class="loader" id="loader" aria-label="Loading wedding invitation"><div class="loader-mark">S <span>&</span> A</div><div class="loader-caption">A CELEBRATION OF LOVE</div><div class="loader-track"><i></i></div><div class="loader-status">PREPARING YOUR INVITATION</div></div>
+<section class="entry-screen" id="entryScreen" aria-label="Wedding invitation entry">
+  <div class="entry-frame">
+    <div class="entry-top"><span>THE WEDDING CELEBRATION</span><span>BIHAR · INDIA</span></div>
+    <div class="entry-art" aria-hidden="true"><svg viewBox="0 0 320 390" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M160 370V180M160 270C106 265 74 226 76 177C124 183 158 219 160 270ZM160 230C207 218 232 181 226 137C183 148 158 182 160 230ZM160 188C119 158 112 117 135 78C169 111 176 150 160 188ZM160 315C207 310 238 276 238 235C195 243 167 273 160 315ZM160 338C122 328 99 300 101 270C132 279 154 305 160 338Z" stroke="#b9a777" stroke-width="1.1"/><path d="M160 370C144 334 142 294 160 250C178 205 181 155 160 110" stroke="#b9a777" stroke-width="1.1"/><circle cx="160" cy="62" r="27" stroke="#b9a777" stroke-width="1"/><circle cx="160" cy="62" r="20" stroke="#b9a777" stroke-width=".7"/><path d="M160 27V15M160 109V97M125 62H113M207 62H195M135 37L127 29M193 95L185 87M185 37L193 29M127 95L135 87" stroke="#b9a777" stroke-width="1"/></svg></div>
+    <div class="entry-copy"><p class="entry-kicker">WITH THE BLESSINGS OF OUR FAMILIES</p><h1>Sonali <i>&</i><br>Atul</h1><div class="entry-rule"><span></span><b>✳</b><span></span></div><p class="entry-invite">Request the pleasure of your presence<br>as we begin our forever.</p><p class="entry-date">30 NOVEMBER — 04 DECEMBER <span>2026</span></p><button class="entry-button" id="enterInvitation">OPEN INVITATION <span>↗</span></button></div>
+    <div class="entry-bottom"><span>SONALI × ATUL</span><span>MADE WITH LOVE</span></div>
+  </div>
+</section>
 <header class="wrap topbar"><a class="brand" href="#">S & A</a><span>Wedding Invitation</span><span>30 Nov — 04 Dec</span></header>
 <main>
 <section class="hero wrap"><div><div class="eyebrow">Together with our families</div><h1>Sonali <span>&</span> Atul</h1><p class="sub">A new chapter. A lifetime together.</p><div class="date-line">30 NOVEMBER — 04 DECEMBER 2026 · BIHAR</div><a class="scroll" href="#celebrations">The celebrations ↓</a></div></section>
@@ -57,4 +86,5 @@ body.is-loading{overflow:hidden}
 <section class="closing"><p>We can’t wait to celebrate<br>with you.</p><span>SONALI & ATUL</span></section>
 </main><footer><div class="wrap"><span>SONALI & ATUL</span><span>30 NOVEMBER — 04 DECEMBER 2026</span></div></footer>
 <script>(()=>{const loader=document.getElementById("loader");let done=false;const finish=()=>{if(done)return;done=true;loader.classList.add("is-hidden");document.body.classList.remove("is-loading");setTimeout(()=>loader&&loader.remove(),750)};window.addEventListener("load",()=>setTimeout(finish,850),{once:true});setTimeout(finish,2600)})();</script>
+<script>document.getElementById("enterInvitation").addEventListener("click",()=>{const e=document.getElementById("entryScreen");e.classList.add("is-opened");document.body.style.overflow="";setTimeout(()=>e.remove(),800)});</script>
 </body></html>
