@@ -63,7 +63,7 @@ body.is-loading{overflow:hidden}
 </style>
 </head>
 <body class="is-loading">
-<div class="loader" id="loader" aria-label="Loading wedding invitation"><div class="ganesh-mark" aria-label="Lord Ganesha"><svg viewBox="0 0 220 220" role="img" aria-label="श्री गणेश"><g fill="none" stroke="#c6ae7b" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M110 22c-13 0-23 10-23 23 0 11 8 18 17 20l-1 17c-9-10-21-15-31-11-13 5-15 21-6 31 7 8 17 8 25 2l8-8v17c-12 8-20 20-20 34 0 23 15 39 31 39s31-16 31-39c0-14-8-26-20-34V96l8 8c8 6 18 6 25-2 9-10 7-26-6-31-10-4-22 1-31 11l-1-17c9-2 17-9 17-20 0-13-10-23-23-23Z"/><path d="M87 48c-16-4-31 1-38 14-7 14 0 29 14 35M133 48c16-4 31 1 38 14 7 14 0 29-14 35M91 87c6-7 12-10 19-10s13 3 19 10M99 94c3 3 7 5 11 5s8-2 11-5M110 99v19c0 12 9 17 16 12 5-4 4-11-1-14M74 139c-13 5-22 15-25 28M146 139c13 5 22 15 25 28M78 180c-10 4-17 10-21 18M142 180c10 4 17 10 21 18M96 61c4-3 9-5 14-5s10 2 14 5M110 14v-5"/></g><path d="M105 47q5-5 10 0l-5 8Z" fill="#c6ae7b"/><circle cx="99" cy="82" r="2.5" fill="#c6ae7b"/><circle cx="121" cy="82" r="2.5" fill="#c6ae7b"/></svg></div><div class="loader-mantra">॥ श्री गणेशाय नमः ॥</div><div class="loader-caption">A CELEBRATION OF LOVE</div><div class="loader-track"><i></i></div><div class="loader-status">PREPARING YOUR INVITATION</div></div>
+<div class="loader" id="loader" aria-label="Loading wedding invitation"><div class="ganesh-mark" aria-label="Lord Ganesha"><img src="ganesh-ji.png" alt="Golden Lord Ganesha" style="width:100%;height:100%;object-fit:contain;display:block" /></div><div class="loader-mantra">॥ श्री गणेशाय नमः ॥</div><div class="loader-caption">A CELEBRATION OF LOVE</div><div class="loader-track"><i></i></div><div class="loader-status">PREPARING YOUR INVITATION</div></div>
 <section class="entry-screen" id="entryScreen" aria-label="Wedding invitation entry">
   <div class="entry-frame">
     <div class="entry-top"><span data-en="THE WEDDING CELEBRATION" data-hi="विवाह समारोह">THE WEDDING CELEBRATION</span><span>BIHAR · INDIA</span><button class="lang-switch" id="langSwitch" type="button">हिन्दी</button></div>
@@ -88,4 +88,19 @@ body.is-loading{overflow:hidden}
 <script>(()=>{const loader=document.getElementById("loader");let done=false;const finish=()=>{if(done)return;done=true;loader.classList.add("is-hidden");document.body.classList.remove("is-loading");setTimeout(()=>loader&&loader.remove(),750)};window.addEventListener("load",()=>setTimeout(finish,850),{once:true});setTimeout(finish,2600)})();</script>
 <script>(()=>{let lang="en";const setLang=(next)=>{lang=next;document.documentElement.lang=lang==="hi"?"hi":"en";document.querySelectorAll("[data-en][data-hi]").forEach(el=>{el.innerHTML=el.dataset[lang]});document.querySelectorAll(".lang-switch").forEach(btn=>{btn.textContent=lang==="en"?"हिन्दी":"English";btn.setAttribute("aria-label",lang==="en"?"Switch to Hindi":"Switch to English")})};document.getElementById("langSwitch").addEventListener("click",()=>setLang(lang==="en"?"hi":"en"));document.getElementById("pageLangSwitch").addEventListener("click",()=>setLang(lang==="en"?"hi":"en"))})();</script>
 <script>document.getElementById("enterInvitation").addEventListener("click",()=>{const e=document.getElementById("entryScreen");e.classList.add("is-opened");document.body.style.overflow="";setTimeout(()=>e.remove(),800)});</script>
+
+<style>
+.ganesh-mark{width:min(72vw,390px);height:min(72vw,390px);margin-bottom:10px}
+.ganesh-mark img{filter:drop-shadow(0 0 14px #c6ae7b22)}
+.music-control{position:fixed;right:20px;bottom:20px;z-index:800;background:#27382f;color:#f7f5ef;border:1px solid #c6ae7b;padding:12px 16px;display:flex;align-items:center;gap:10px;font:500 10px 'DM Sans',sans-serif;letter-spacing:1px;cursor:pointer;box-shadow:0 8px 28px #00000014}
+.music-control .music-icon{color:#c6ae7b;font-size:16px}
+.music-control[aria-pressed="true"]{background:#35483a}
+@media(max-width:600px){.ganesh-mark{width:min(76vw,320px);height:min(76vw,320px)}.music-control{right:12px;bottom:12px;padding:11px 13px}}
+</style>
+<audio id="weddingMusic" src="kudmayi.mp3" preload="none" loop></audio>
+<button class="music-control" id="musicToggle" type="button" aria-pressed="false" aria-label="Play wedding music"><span class="music-icon" id="musicIcon">♫</span><span id="musicLabel">PLAY KUDMAYI</span></button>
+<script>
+(()=>{const audio=document.getElementById('weddingMusic');const btn=document.getElementById('musicToggle');const label=document.getElementById('musicLabel');const icon=document.getElementById('musicIcon');btn.addEventListener('click',async()=>{if(audio.paused){try{await audio.play();btn.setAttribute('aria-pressed','true');btn.setAttribute('aria-label','Pause wedding music');label.textContent='PAUSE MUSIC';icon.textContent='Ⅱ'}catch(e){label.textContent='TAP TO PLAY';}}else{audio.pause();btn.setAttribute('aria-pressed','false');btn.setAttribute('aria-label','Play wedding music');label.textContent='PLAY KUDMAYI';icon.textContent='♫'}});audio.addEventListener('ended',()=>{btn.setAttribute('aria-pressed','false');label.textContent='PLAY KUDMAYI';icon.textContent='♫'});})();
+</script>
+
 </body></html>
