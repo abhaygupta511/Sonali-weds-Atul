@@ -60,6 +60,55 @@ body.is-loading{overflow:hidden}
 .entry-button span{margin-left:25px;color:#c6b58a;font-size:14px}
 .entry-button:hover{background:#f7f5ef;color:#27382f}
 @media(max-width:650px){.entry-screen{padding:10px}.entry-frame{min-height:calc(100svh - 20px);grid-template-columns:1fr;grid-template-rows:minmax(150px,28svh) 1fr}.entry-top,.entry-bottom{left:17px;right:17px;font-size:6px;letter-spacing:1.2px}.entry-top{top:18px}.entry-bottom{bottom:17px}.entry-art{padding:35px 0 0;overflow:hidden}.entry-art svg{width:150px;height:190px}.entry-copy{padding:20px 18px 45px;align-self:start}.entry-kicker{font-size:7px;margin-bottom:18px}.entry-copy h1{font-size:clamp(54px,14vw,72px)}.entry-rule{margin:18px 0 12px}.entry-invite{font-size:14px;margin:12px 0}.entry-date{margin:19px 0}.entry-button{padding:14px 18px}}
+
+/* Event-led editorial redesign */
+:root{--paper:#f7f4ec;--ink:#26362c;--muted:#74776b;--line:#ded8c9;--accent:#c6ae7b}
+body{background:var(--paper)}
+.topbar{border-bottom-color:#d7d0bf}
+.hero{background:#26382e;min-height:680px}
+.hero:before{border-color:#c6ae7b55}
+.hero .eyebrow{letter-spacing:3px}
+.hero h1{font-size:clamp(68px,11vw,124px)}
+.hero .date-line{letter-spacing:2.4px}
+.section{padding:90px 0}
+.section-head{margin-bottom:45px}
+.section-head h2{font-size:clamp(38px,5.5vw,60px)}
+#celebrations .wrap{width:min(1080px,calc(100% - 48px))}
+#celebrations .section-head{align-items:end}
+#celebrations .section-head:after{content:"FOUR DAYS · ONE BEAUTIFUL BEGINNING";font-size:8px;letter-spacing:1.6px;color:var(--muted)}
+.event{display:grid;grid-template-columns:92px minmax(220px, .95fr) minmax(220px,1.05fr);gap:28px;align-items:center;padding:28px 0;border-top:1px solid var(--line);border-bottom:0;transition:transform .25s ease}
+.event:last-child{border-bottom:1px solid var(--line)}
+.event:hover{background:transparent;transform:translateY(-2px)}
+.event-date{align-self:start;padding-top:8px}
+.event-date strong{font-size:48px;color:#9f8957}
+.event-photo{height:205px;overflow:hidden;background:#e5dfd0}
+.event-photo img{width:100%;height:100%;display:block;object-fit:cover;transition:transform .6s ease;filter:saturate(.78)}
+.event:hover .event-photo img{transform:scale(1.04)}
+.event-copy{padding:10px 0}
+.event-index{font-size:8px;letter-spacing:1.8px;color:#9b8656}
+.event h3{font-size:35px;margin:13px 0 9px}
+.event p{max-width:330px;font-size:12px;line-height:1.9}
+.venue-card{background:#26382e;color:#f7f4ec;border-color:#26382e;padding:38px}
+.venue-card .small,.venue-card .map{color:#d4bd87}
+.venue-card h3{font-size:34px}
+.venue-card p{color:#d6d8cf}
+.family{border-top-color:#d7d0bf}
+.closing{background:#26382e;color:#f7f4ec;border-color:#26382e}
+.closing span{color:#d4bd87}
+footer{border-color:#d7d0bf}
+@media(max-width:680px){
+ .section{padding:62px 0}
+ #celebrations .wrap{width:calc(100% - 36px)}
+ #celebrations .section-head:after{display:block;margin-top:18px}
+ .event{grid-template-columns:66px 1fr;gap:13px;padding:22px 0}
+ .event-date strong{font-size:34px}
+ .event-photo{grid-column:2;grid-row:1;height:190px}
+ .event-copy{grid-column:2;grid-row:2;padding:0 0 6px}
+ .event h3{font-size:29px}
+ .event-index{font-size:7px}
+ .venue-card{padding:27px}
+}
+
 </style>
 </head>
 <body class="is-loading">
@@ -77,10 +126,10 @@ body.is-loading{overflow:hidden}
 <section class="hero wrap"><div><div class="eyebrow">Together with our families</div><h1>Sonali <span>&</span> Atul</h1><p class="sub">A new chapter. A lifetime together.</p><div class="date-line">30 NOVEMBER — 04 DECEMBER 2026 · BIHAR</div><a class="scroll" href="#celebrations">The celebrations ↓</a></div></section>
 <section class="section"><div class="wrap"><div class="section-head"><span class="section-number" data-en="01 / THE INVITATION" data-hi="०१ / सादर निमंत्रण">01 / THE INVITATION</span><h2 data-en="With love, we invite you." data-hi="सप्रेम आमंत्रण।">With love, we invite you.</h2></div><p class="intro" data-en="Some moments are made more beautiful by the people who share them. We would be delighted to have you with us as our families come together to celebrate this special beginning." data-hi="कुछ पल अपनों के साथ और भी खूबसूरत बन जाते हैं। हमारे परिवारों के इस शुभ अवसर पर आपकी उपस्थिति हमारे लिए आनंद का विषय होगी।">Some moments are made more beautiful by the people who share them. We would be delighted to have you with us as our families come together to celebrate this special beginning.</p></div></section>
 <section class="section" id="celebrations"><div class="wrap"><div class="section-head"><span class="section-number" data-en="02 / SAVE THE DATES" data-hi="०२ / शुभ तिथियाँ">02 / SAVE THE DATES</span><h2 data-en="The celebrations" data-hi="शुभ आयोजन">The celebrations</h2></div>
-<article class="event"><div class="event-date"><strong>30</strong>November</div><div><h3 data-en="Tilak" data-hi="तिलक">Tilak</h3><p data-en="A traditional beginning with prayers and blessings." data-hi="प्रार्थनाओं और आशीर्वाद के साथ शुभ शुरुआत।">A traditional beginning with prayers and blessings.</p></div></article>
-<article class="event"><div class="event-date"><strong>02</strong>December</div><div><h3 data-en="Mehndi" data-hi="मेहंदी">Mehndi</h3><p data-en="A day of colour, laughter and togetherness." data-hi="रंगों, हँसी और अपनों के साथ खुशियों भरा दिन।">A day of colour, laughter and togetherness.</p></div></article>
-<article class="event"><div class="event-date"><strong>03</strong>December</div><div><h3 data-en="Wedding" data-hi="विवाह">Wedding</h3><p data-en="The day we begin our forever, surrounded by family and friends." data-hi="परिवार और मित्रों के स्नेह के बीच जीवन की नई शुरुआत।">The day we begin our forever, surrounded by family and friends.</p></div></article>
-<article class="event"><div class="event-date"><strong>04</strong>December</div><div><h3 data-en="Vidaai" data-hi="विदाई">Vidaai</h3><p data-en="A heartfelt farewell and the beginning of a new journey." data-hi="भावपूर्ण विदाई और एक नए सफर की शुरुआत।">A heartfelt farewell and the beginning of a new journey.</p></div></article></div></section>
+<article class="event"><div class="event-date"><strong>30</strong>November</div><div class="event-photo"><img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1000&q=85" alt="Traditional Indian wedding celebration" loading="lazy"></div><div class="event-copy"><span class="event-index">01 · FAMILY RITUAL</span><h3 data-en="Tilak" data-hi="तिलक">Tilak</h3><p data-en="A traditional beginning with prayers and blessings." data-hi="प्रार्थनाओं और आशीर्वाद के साथ शुभ शुरुआत।">A traditional beginning with prayers and blessings.</p></div></article>
+<article class="event"><div class="event-date"><strong>02</strong>December</div><div class="event-photo"><img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1000&q=85" alt="Joyful wedding festivities" loading="lazy"></div><div class="event-copy"><span class="event-index">02 · COLOUR & JOY</span><h3 data-en="Mehndi" data-hi="मेहंदी">Mehndi</h3><p data-en="A day of colour, laughter and togetherness." data-hi="रंगों, हँसी और अपनों के साथ खुशियों भरा दिन।">A day of colour, laughter and togetherness.</p></div></article>
+<article class="event"><div class="event-date"><strong>03</strong>December</div><div class="event-photo"><img src="https://images.unsplash.com/photo-1519225421980-888cbf?auto=format&fit=crop&w=1000&q=85" alt="Wedding ceremony details" loading="lazy"></div><div class="event-copy"><span class="event-index">03 · THE WEDDING DAY</span><h3 data-en="Wedding" data-hi="विवाह">Wedding</h3><p data-en="The day we begin our forever, surrounded by family and friends." data-hi="परिवार और मित्रों के स्नेह के बीच जीवन की नई शुरुआत।">The day we begin our forever, surrounded by family and friends.</p></div></article>
+<article class="event"><div class="event-date"><strong>04</strong>December</div><div class="event-photo"><img src="https://images.unsplash.com/photo-1465495976277-4387d4b0e4a6?auto=format&fit=crop&w=1000&q=85" alt="A heartfelt wedding farewell" loading="lazy"></div><div class="event-copy"><span class="event-index">04 · NEW BEGINNINGS</span><h3 data-en="Vidaai" data-hi="विदाई">Vidaai</h3><p data-en="A heartfelt farewell and the beginning of a new journey." data-hi="भावपूर्ण विदाई और एक नए सफर की शुरुआत।">A heartfelt farewell and the beginning of a new journey.</p></div></article></div></section>
 <section class="section"><div class="wrap venue-grid"><div><div class="section-number" data-en="03 / THE VENUE" data-hi="०३ / विवाह स्थल">03 / THE VENUE</div><h2 style="margin-top:20px" data-en="Join us for<br>the wedding." data-hi="विवाह समारोह में<br>सादर आमंत्रित हैं।">Join us for<br>the wedding.</h2><p class="intro" style="margin:18px 0 0" data-en="We look forward to celebrating this day with you." data-hi="इस शुभ दिन को आपके साथ मनाने की प्रतीक्षा रहेगी।">We look forward to celebrating this day with you.</p></div><div class="venue-card"><div class="small" data-en="Wedding venue · 03 December" data-hi="विवाह स्थल · ०३ दिसम्बर">Wedding venue · 03 December</div><h3>Hotel Radhe Krishna</h3><p>Patna Mod, Mohaniya<br>Kaimur, Bihar</p><a class="map" data-en="View directions ↗" data-hi="रास्ता देखें ↗" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Hotel+Radhe+Krishna+Patna+Mod+Mohaniya+Kaimur+Bihar">View directions ↗</a></div></div></section>
 <section class="section"><div class="wrap"><div class="section-head"><span class="section-number" data-en="04 / WITH THEIR BLESSINGS" data-hi="०४ / परिवारों के आशीर्वाद सहित">04 / WITH THEIR BLESSINGS</span><h2 data-en="Our families" data-hi="हमारे परिवार">Our families</h2></div><div class="family-grid"><div class="family"><div class="role" data-en="The bride" data-hi="वधू">The bride</div><h3>Sonali</h3><p><span data-en="Daughter of" data-hi="सुपुत्री">Daughter of</span><br>Shri Surendera Kumar Gupta</p></div><div class="family"><div class="role" data-en="The groom" data-hi="वर">The groom</div><h3>Atul</h3><p><span data-en="Son of" data-hi="सुपुत्र">Son of</span><br>Shri Ramawatar Kumar Gupta</p></div></div></div></section>
 <section class="closing"><p data-en="We can’t wait to celebrate<br>with you." data-hi="आपके साथ खुशियाँ मनाने की<br>प्रतीक्षा रहेगी।">We can’t wait to celebrate<br>with you.</p><span>SONALI & ATUL</span></section>
