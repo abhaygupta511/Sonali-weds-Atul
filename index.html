@@ -152,4 +152,51 @@ footer{border-color:#d7d0bf}
 (()=>{const audio=document.getElementById('weddingMusic');const btn=document.getElementById('musicToggle');const label=document.getElementById('musicLabel');const icon=document.getElementById('musicIcon');btn.addEventListener('click',async()=>{if(audio.paused){try{await audio.play();btn.setAttribute('aria-pressed','true');btn.setAttribute('aria-label','Pause wedding music');label.textContent='PAUSE MUSIC';icon.textContent='Ⅱ'}catch(e){label.textContent='TAP TO PLAY';}}else{audio.pause();btn.setAttribute('aria-pressed','false');btn.setAttribute('aria-label','Play wedding music');label.textContent='PLAY KUDMAYI';icon.textContent='♫'}});audio.addEventListener('ended',()=>{btn.setAttribute('aria-pressed','false');label.textContent='PLAY KUDMAYI';icon.textContent='♫'});})();
 </script>
 
+
+<style>
+/* Indian wedding warmth: marigold, rangoli and mandap-inspired details */
+:root{--sindoor:#9b332c;--marigold:#d69a27;--leaf:#26382e;--ivory:#f8f3e8}
+.topbar{background:var(--ivory)}
+.brand{color:var(--sindoor)}
+.hero{background:linear-gradient(135deg,#24372c 0%,#304535 58%,#49372b 100%)}
+.hero:after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.22;background:radial-gradient(circle at 10% 10%,#d69a27 0 2px,transparent 3px),radial-gradient(circle at 90% 12%,#d69a27 0 2px,transparent 3px),radial-gradient(circle at 12% 88%,#d69a27 0 2px,transparent 3px),radial-gradient(circle at 88% 88%,#d69a27 0 2px,transparent 3px);background-size:34px 34px}
+.hero:before{inset:18px;border:1px solid #d6b46d80;z-index:1}
+.hero .eyebrow,.hero .scroll{color:#e7c77d}
+.hero h1 span{color:#e7c77d}
+.hero .sub{color:#f0e5cf}
+.hero .date-line{color:#e7d7b8}
+.section-number,.event-index,.event-date{color:var(--sindoor)}
+.event-date strong{color:var(--sindoor)}
+.event-photo{border:1px solid #d8c49a;padding:4px;background:#fffaf0}
+.event-photo img{filter:saturate(.92) sepia(.06)}
+.event h3{color:#71332b}
+#celebrations .section-head:after{color:#9b332c}
+.venue-card{background:#7f302b;border-color:#7f302b;position:relative;overflow:hidden}
+.venue-card:after{content:"✦  ❋  ✦";position:absolute;right:18px;bottom:10px;color:#e6c47d;opacity:.22;font-size:30px;letter-spacing:8px}
+.venue-card .small,.venue-card .map{color:#f1d58f}
+.family .role{color:var(--sindoor)}
+.closing{background:#7f302b;position:relative;overflow:hidden}
+.closing:before,.closing:after{content:"✦";position:absolute;color:#e6c47d55;font-size:90px;top:18px}
+.closing:before{left:7%}.closing:after{right:7%}
+.loader{background:radial-gradient(ellipse at center,#354a38,#202f26)}
+.loader:before{inset:12px;border:2px solid #d69a2760;outline:1px solid #d69a2730;outline-offset:-8px}
+.loader-mantra{color:#f1d58f}
+.loader-caption,.loader-status{color:#eadbb8}
+.loader-track i{background:#d69a27}
+.entry-screen{background:#203027}
+.entry-frame{border:1px solid #d69a2780;background:radial-gradient(ellipse at center,#344a38,#203027)}
+.entry-top,.entry-bottom{color:#e5d3a9}
+.entry-kicker,.entry-date{color:#e9c878}
+.entry-copy h1 i{color:#e9c878}
+.entry-rule,.entry-rule span{color:#e9c878}
+.entry-rule span{background:#d69a2780}
+.entry-button{border-color:#d69a27}
+.entry-button span{color:#e9c878}
+.lang-switch{border-color:#d69a2780;color:#f1d58f}
+.music-control{background:#7f302b;border-color:#e0b960;color:#fff7e8;border-radius:2px}
+.music-control .music-icon{color:#f5d17e}
+.music-control[aria-pressed="true"]{background:#9b332c}
+@media(max-width:600px){.closing:before,.closing:after{font-size:48px;top:10px}.closing:before{left:3%}.closing:after{right:3%}}
+</style>
+
 </body></html>
